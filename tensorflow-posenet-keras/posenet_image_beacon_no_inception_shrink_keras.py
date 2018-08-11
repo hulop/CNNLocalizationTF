@@ -161,9 +161,9 @@ def create_posenet_mobilenet_v1(num_beacon, image_weights_path=None, beacon_weig
     
     image_beacon_cls_fc_pose_xyz = Dense(3,name='image_beacon_cls_fc_pose_xyz')(image_beacon_fc_pose_xyz)
 
-    image_beacon_fc_pose_wpqr = concatenate([image_conv_pose_xyz_flat, beacon_cls3_fc1_pose],axis=1,name='image_beacon_fc_pose_xyz')
+    image_beacon_fc_pose_wpqr = concatenate([image_conv_pose_wpqr_flat, beacon_cls3_fc1_pose],axis=1,name='image_beacon_fc_pose_wpqr')
     
-    image_beacon_cls_fc_pose_wpqr = Dense(4,name='image_beacon_cls_fc_pose_wpqr')(image_beacon_fc_pose_xyz)
+    image_beacon_cls_fc_pose_wpqr = Dense(4,name='image_beacon_cls_fc_pose_wpqr')(image_beacon_fc_pose_wpqr)
     
     image_beacon_posenet = Model(inputs=[image_base_model.input, beacon_input], outputs=[image_beacon_cls_fc_pose_xyz, image_beacon_cls_fc_pose_wpqr])
     
