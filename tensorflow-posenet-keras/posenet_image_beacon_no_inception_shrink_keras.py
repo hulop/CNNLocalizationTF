@@ -138,10 +138,10 @@ def create_posenet_mobilenet_v1(num_beacon, image_weights_path=None, beacon_weig
     
     image_conv_pose_xyz_flat = Flatten()(image_conv_pose_xyz)
     
-    image_conv_pose_wpqr = Conv2D(1024, (1, 1),
+    #image_conv_pose_wpqr = Conv2D(1024, (1, 1),
                                   padding='same', name='conv_pose_wpqr')(image_model_output)
     
-    image_conv_pose_wpqr_flat = Flatten()(image_conv_pose_wpqr)
+    #image_conv_pose_wpqr_flat = Flatten()(image_conv_pose_wpqr)
     
     # beacon network
     beacon_input = Input(shape=(num_beacon, 1, 1))
@@ -161,7 +161,7 @@ def create_posenet_mobilenet_v1(num_beacon, image_weights_path=None, beacon_weig
     
     image_beacon_cls_fc_pose_xyz = Dense(3,name='image_beacon_cls_fc_pose_xyz')(image_beacon_fc_pose_xyz)
 
-    image_beacon_fc_pose_wpqr = concatenate([image_conv_pose_xyz_flat, beacon_cls3_fc1_pose],axis=1,name='image_beacon_fc_pose_xyz')
+    #image_beacon_fc_pose_wpqr = concatenate([image_conv_pose_xyz_flat, beacon_cls3_fc1_pose],axis=1,name='image_beacon_fc_pose_xyz')
     
     image_beacon_cls_fc_pose_wpqr = Dense(4,name='image_beacon_cls_fc_pose_wpqr')(image_beacon_fc_pose_xyz)
     
