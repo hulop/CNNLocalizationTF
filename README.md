@@ -6,3 +6,10 @@ server side code for CNN localization
 - [Keras version 2.1.5](https://github.com/keras-team/keras) (MIT License)
 - [NumPy 1.8.2](http://www.numpy.org/)  (BSD License)
 - [SciPy 0.15.1](http://www.scipy.org/) (BSD License)
+
+----
+## About
+[About HULOP](https://github.com/hulop/00Readme)
+
+## License
+[MIT](http://opensource.org/licenses/MIT)
